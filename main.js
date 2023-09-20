@@ -121,7 +121,7 @@ function parseStorageUsage(diskOutput) {
 }
 
 async function updateStats() {
-  const embed = new MessageEmbed().setTitle('Stats Server | RaspberryPi OS');
+  const embed = new MessageEmbed().setTitle('Stats Server | Rasbian');
   const stats = await new Promise((resolve, reject) => {
     getSystemStats((error, result) => {
       if (error) {
