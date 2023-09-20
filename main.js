@@ -134,7 +134,7 @@ async function updateStats() {
 
   embed.setDescription(`**------------------------ ${stats.ProcessorTemp} -----------------------**`);
   embed.setColor('PURPLE');
-  embed.setThumbnail('https://github.com/Kurama250/Stats_server_pi/blob/main/img/pi.png')
+  embed.setThumbnail('https://raw.githubusercontent.com/Kurama250/Stats_server_pi/main/img/pi.png')
   embed.setTimestamp()
 
   embed.addFields(
