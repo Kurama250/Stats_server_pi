@@ -121,7 +121,7 @@ function parseStorageUsage(diskOutput) {
 }
 
 async function updateStats() {
-  const embed = new MessageEmbed().setTitle('Stats Server (Vps | Dedicated)');
+  const embed = new MessageEmbed().setTitle('Stats Server | RaspberryPi OS');
   const stats = await new Promise((resolve, reject) => {
     getSystemStats((error, result) => {
       if (error) {
@@ -132,14 +132,15 @@ async function updateStats() {
     });
   });
 
-  embed.setDescription('Stats Server :');
-  embed.setColor('BLUE');
+  embed.setDescription(`**------------------------ ${stats.ProcessorTemp} -----------------------**`);
+  embed.setColor('PURPLE');
+  embed.setThumbnail('https://github.com/Kurama250/Stats_server_pi/blob/main/img/pi.png')
+  embed.setTimestamp()
 
   embed.addFields(
-    { name: 'CPU usage', value: `${stats.CpuUsage}%`, inline: true },
-    { name: 'Memory usage', value: `${stats.RamUsage}%`, inline: true },
-    { name: 'Disk usage', value: `${stats.StorageUsage}`, inline: true },
-    { name: 'Processor temperature', value: `${stats.ProcessorTemp}`, inline: true }
+    { name: 'CPU usage 🔋', value: `${stats.CpuUsage}%`, inline: true },
+    { name: 'Memory usage 📟', value: `${stats.RamUsage}%`, inline: true },
+    { name: 'Disk usage 📂', value: `${stats.StorageUsage}`, inline: true }
   );
 
   const guild = await client.guilds.fetch(serverId);
