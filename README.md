@@ -1,8 +1,6 @@
 <h1 align="center">Bot stats Raspberry Pi server for Discord</h1>
 <em><h5 align="center">(Programming Language - Node.js | Shell)</h5></em>
 
-- Licence : Creative commons - CC BY-NC-ND 4.0
-
 # Tutorial to install the bot ! For Pi OS (Raspberry Pi)
 
 ## 1 - on Terminal
@@ -54,5 +52,7 @@ pm2 start main.js -n Stats_server_pi
 - Demo : 
 
 ![alt text](https://github.com/Kurama250/Stats_server_pi/blob/main/img/stats-server-pi.png)
+
+- Licence : Creative commons - CC BY-NC-ND 4.0
 
 <h1 align="center">Then it's the end you have started the bot have fun !</h1>
