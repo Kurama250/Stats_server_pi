@@ -1,7 +1,7 @@
 <h1 align="center">Bot stats Raspberry Pi server for Discord</h1>
 <em><h5 align="center">(Programming Language - Node.js | Shell)</h5></em>
 
-# Tutorial to install the bot ! For Pi Os (Raspberry Pi)
+# Tutorial to install the bot ! For Rasbian (Raspberry Pi)
 
 ## 1 - on Terminal
 
