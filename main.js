@@ -53,8 +53,6 @@ function getSystemStats(callback) {
           const CpuUsage = parseCpuUsage(cpuOutput);
           const RamUsage = parseMemoryUsage(memOutput);
           const StorageUsage = parseStorageUsage(diskOutput);
-          
-          // Extrait la température du processeur du résultat de vcgencmd
           const ProcessorTemp = parseProcessorTemperature(tempOutput);
 
           const stats = {
