@@ -55,4 +55,4 @@ pm2 start main.js -n Stats_server_pi
 
 <h1 align="center">Then it's the end you have started the bot have fun !</h1>
 
-Licence : [Creative commons](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) - CC BY-NC-ND 4.0 by [Kurama250](https://github.com/Kurama250) | [Yoro404](https://github.com/Yoro404) 
+Licence : [Creative commons](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) - CC BY-NC-ND 4.0 by [Kurama250](https://github.com/Kurama250) | [Yoro404](https://github.com/Yoro404)
