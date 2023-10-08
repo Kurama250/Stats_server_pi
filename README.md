@@ -20,7 +20,6 @@ apt install npm node.js git raspi-config -y
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
 apt-get install -y nodejs
 ```
-
 ```shell script
 git clone https://github.com/Kurama250/Stats_server_pi.git
 cd Stats_server_pi
