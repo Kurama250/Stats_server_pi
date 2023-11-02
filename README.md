@@ -16,7 +16,7 @@ bash <(curl -s https://raw.githubusercontent.com/Kurama250/Stats_server_pi/main/
 
 ```shell script
 apt update && apt upgrade -y
-apt install npm node.js git raspi-config -y
+apt install npm nodejs git raspi-config -y
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
 apt-get install -y nodejs
 ```
