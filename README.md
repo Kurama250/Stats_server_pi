@@ -1,6 +1,13 @@
 <h1 align="center">Bot stats Raspberry Pi server for Discord</h1>
 <em><h5 align="center">(Programming Language - Node.js | Shell)</h5></em>
 
+<p align="center">
+  <img src="https://img.shields.io/github/stars/Kurama250/Stats_server_pi">
+  <img src="https://img.shields.io/github/license/Kurama250/Stats_server_pi">
+  <img src="https://img.shields.io/github/repo-size/Kurama250/Stats_server_pi">
+  <img src="https://img.shields.io/badge/stability-stable-green">
+</p>
+
 # Tutorial to install the bot ! For Rasbian (Raspberry Pi)
 
 ## 1 - on Terminal
