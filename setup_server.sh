@@ -4,8 +4,12 @@
 
 apt update && apt upgrade -y
 apt install npm nodejs git raspi-config -y
-curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
-apt-get install -y nodejs -y
+if ! command -v node &> /dev/null; then
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+    apt-get install -y nodejs -y
+else
+    echo "Node.js is already installed. Skipping installation."
+fi
 git clone https://github.com/Kurama250/Stats_server_pi.git
 cd Stats_server_pi/
 npm install discord.js@13 child_process
