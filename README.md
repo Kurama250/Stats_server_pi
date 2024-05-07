@@ -65,6 +65,7 @@ pm2 start main.js -n Stats_server_pi
 
 ![alt text](https://github.com/Kurama250/Stats_server_pi/blob/main/img/stats-server-pi.png)
 
+<h3 align="center">If you like this repository don't hesitate to give it a star ⭐ !</h3>
 <h1 align="center">Then it's the end you have started the bot have fun !</h1>
 
 Licence : [Creative commons](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) - CC BY-NC-ND 4.0 by [Kurama250](https://github.com/Kurama250) | [Yoro404](https://github.com/Yoro404)
