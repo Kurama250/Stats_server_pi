@@ -1,16 +1,10 @@
-/*
-Created by Kurama | Yoro404
-Github : https://github.com/Kurama250 | https://github.com/Yoro404
-
-- Install discord.js@13 child_process
-- Node.js v16
-*/
-
-const { Client, Intents, MessageEmbed } = require('discord.js');
+const { Client, IntentsBitField, EmbedBuilder, Message } = require('discord.js');
 const { exec } = require('child_process');
-
+/**
+ * @param {Message} message
+ */
 const client = new Client({
-  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
+  intents: [IntentsBitField.Flags.Guilds, IntentsBitField.Flags.GuildMessages]
 });
 
 const config = require('./config.json');
@@ -25,7 +19,7 @@ client.on('ready', () => {
 
 client.login(token);
 
-function getSystemStats(callback) {
+function getSystemStats(callback, message) {
   exec('top -bn1 | grep Cpu', (error, cpuOutput) => {
     if (error) {
       console.error(`Error executing top : ${error.message}`);
@@ -118,8 +112,15 @@ function parseStorageUsage(diskOutput) {
   return StorageUsage;
 }
 
-async function updateStats() {
-  const embed = new MessageEmbed().setTitle('Stats Server | Rasbian');
+let sentMessage = null;
+
+async function updateStats(message) {
+  const embed = new EmbedBuilder()
+    .setTitle('Stats Server | Rasbian')
+    .setColor(0x9700ff)
+    .setThumbnail('https://raw.githubusercontent.com/Kurama250/Stats_server_pi/main/img/pi.png')
+    .setTimestamp();
+
   const stats = await new Promise((resolve, reject) => {
     getSystemStats((error, result) => {
       if (error) {
@@ -131,9 +132,6 @@ async function updateStats() {
   });
 
   embed.setDescription(`**------------------------ ${stats.ProcessorTemp} -----------------------**`);
-  embed.setColor('PURPLE');
-  embed.setThumbnail('https://raw.githubusercontent.com/Kurama250/Stats_server_pi/main/img/pi.png')
-  embed.setTimestamp()
 
   embed.addFields(
     { name: 'CPU usage 🔋', value: `${stats.CpuUsage}%`, inline: true },
@@ -141,29 +139,29 @@ async function updateStats() {
     { name: 'Disk usage 📂', value: `${stats.StorageUsage}`, inline: true }
   );
 
-  const guild = await client.guilds.fetch(serverId);
-  if (!guild) {
-    console.log(`Error server ID : ${serverId}`);
-    return;
-  }
+  try {
+    const channel = await client.channels.fetch(channelId);
 
-  const channel = await guild.channels.fetch(channelId);
-  if (!channel) {
-    console.log(`Error channel ID : ${channelId}`);
-    return;
-  }
+    if (!channel || !channel.isTextBased()) {
+      console.log(`Error: channel with ID ${channelId} is not a text-based channel or does not exist`);
+      return;
+    }
 
-  if (message) {
-    message.edit({ embeds: [embed] }).catch((error) => {
-      console.log('Error editing message :', error);
-    });
-  } else {
-    message = await channel.send({ embeds: [embed] }).catch((error) => {
-      console.log('Error sending message :', error);
-    });
+    if (sentMessage) {
+      await sentMessage.edit({ embeds: [embed] }).catch((error) => {
+        console.log('Error editing message:', error);
+      });
+    } else {
+      sentMessage = await channel.send({ embeds: [embed] }).catch((error) => {
+        console.log('Error sending message:', error);
+      });
+    }
+  } catch (error) {
+    console.log(`Error fetching channel or sending message: ${error.message}`);
   }
 }
 
 function startUpdatingStats() {
   setInterval(updateStats, 10000);
 }
+
