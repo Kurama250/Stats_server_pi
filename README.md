@@ -36,7 +36,7 @@ apt-get install -y nodejs
 ```shell script
 git clone https://github.com/Kurama250/Stats_server_pi.git
 cd Stats_server_pi
-npm install discord.js@13 child_process
+npm install discord.js child_process
 npm install pm2 -g
 ```
 ## 2 - on Terminal
