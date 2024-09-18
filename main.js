@@ -1,8 +1,11 @@
+/*
+Created by Kurama | Yoro404
+Github : https://github.com/Kurama250 | https://github.com/Yoro404
+*/
+
 const { Client, IntentsBitField, EmbedBuilder, Message } = require('discord.js');
 const { exec } = require('child_process');
-/**
- * @param {Message} message
- */
+
 const client = new Client({
   intents: [IntentsBitField.Flags.Guilds, IntentsBitField.Flags.GuildMessages]
 });
