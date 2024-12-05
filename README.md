@@ -11,7 +11,7 @@
 <p align="center">
   <img src="https://img.shields.io/npm/v/module-name">
   <img src="https://img.shields.io/npm/v/child_process?label=child_process">
-  <img src="https://img.shields.io/npm/v/discord.js@13?label=discord.js@13">
+  <img src="https://img.shields.io/npm/v/discord.js?label=discord.js">
 </p>
 
 # Tutorial to install the bot ! For Rasbian (Raspberry Pi)
